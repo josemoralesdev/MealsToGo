@@ -5,16 +5,11 @@ import { SafeArea } from "../../components/utilities/safe-area.component";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Text } from "react-native";
 import { RestaurantsNavigator } from "./restaurant.navigator";
+import { MapScreen } from "../../features/map/screens/map.screen";
 
 const Settings = () => (
   <SafeArea>
     <Text>Settings</Text>
-  </SafeArea>
-);
-
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
   </SafeArea>
 );
 
@@ -39,12 +34,12 @@ const Tabs = () => (
   <Tab.Navigator
     screenOptions={createScreenOptions}
     tabBarOptions={{
-      activeTintColor: "tomato",
+      activeTintColor: "dodgerblue",
       inactiveTintColor: "gray",
     }}
   >
     <Tab.Screen name="Home" component={RestaurantsNavigator} />
-    <Tab.Screen name="Map" component={Map} />
+    <Tab.Screen name="Map" component={MapScreen} />
     <Tab.Screen name="Settings" component={Settings} />
   </Tab.Navigator>
 );
