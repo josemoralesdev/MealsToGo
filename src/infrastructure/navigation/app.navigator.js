@@ -1,5 +1,4 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeArea } from "../../components/utilities/safe-area.component";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -45,9 +44,5 @@ const Tabs = () => (
 );
 
 export const AppNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
-  );
+  return <Tabs />;
 };
