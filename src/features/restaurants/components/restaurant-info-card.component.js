@@ -2,6 +2,7 @@ import React from "react";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Favourite } from "../../../components/favourites/favourite.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import {
@@ -34,6 +35,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   return (
     <>
       <Card elevation={3}>
+        <Favourite restaurant={restaurant} />
         <Cover key={name} source={{ uri: photos[0] }} />
         <Info>
           <Text variant="label">{name}</Text>

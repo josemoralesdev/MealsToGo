@@ -3,7 +3,6 @@ import { ScrollView } from "react-native";
 import { List } from "react-native-paper";
 
 export const RestaurantInfoAccordion = () => {
-
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
   const [lunchExpanded, setLunchExpanded] = useState(false);
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
