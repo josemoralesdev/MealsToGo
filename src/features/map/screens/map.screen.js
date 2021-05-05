@@ -5,10 +5,8 @@ import MapView from "react-native-maps";
 import styled from "styled-components/native";
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { CompactRestaurantInfo } from "../../../components/restaurant/compact-restaurant-info.component";
 import { Search } from "../components/search.component";
 import { MapCallout } from "../components/map-callout.component";
-import { NavigationContainer } from "@react-navigation/native";
 
 const Map = styled(MapView)`
   height: 100%;
