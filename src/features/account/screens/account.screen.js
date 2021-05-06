@@ -1,8 +1,32 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import {
+  AccountCover,
+  AccountBackground,
+  AccountContainer,
+  AuthButton,
+} from "../components/account.styles";
 
-export const AccountScreen = () => (
-  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <Text>Account screen</Text>
-  </View>
+export const AccountScreen = ({ navigation }) => (
+  <AccountBackground>
+    <AccountCover />
+    <AccountContainer>
+      <AuthButton
+        icon="lock-open-outline"
+        mode="contained"
+        onPress={() => navigation.navigate("Login")}
+      >
+        Login
+      </AuthButton>
+      <Spacer size="large">
+        <AuthButton
+          icon="lock-open-outline"
+          mode="contained"
+          onPress={() => navigation.navigate("Register")}
+        >
+          Register
+        </AuthButton>
+      </Spacer>
+    </AccountContainer>
+  </AccountBackground>
 );
