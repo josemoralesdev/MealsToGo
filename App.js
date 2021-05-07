@@ -13,8 +13,21 @@ import { LocationContextProvider } from "./src/services/location/location.contex
 import { Navigation } from "./src/infrastructure/navigation";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 import { AuthenticationProvider } from "./src/services/authentication/authentication.context";
+import * as firebase from "firebase";
 
 export default function App() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAZSTQS4QTeLsg4sRABsv9qHkhhSeUje90",
+    authDomain: "mealstogo-4a3d5.firebaseapp.com",
+    projectId: "mealstogo-4a3d5",
+    storageBucket: "mealstogo-4a3d5.appspot.com",
+    messagingSenderId: "577460851070",
+    appId: "1:577460851070:web:b4a61aa335a9c0c980232f",
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -26,16 +39,6 @@ export default function App() {
   if (!oswaldLoaded || !latoLoaded) {
     return null;
   }
-  const firebaseConfig = {
-    apiKey: "AIzaSyAZSTQS4QTeLsg4sRABsv9qHkhhSeUje90",
-    authDomain: "mealstogo-4a3d5.firebaseapp.com",
-    projectId: "mealstogo-4a3d5",
-    storageBucket: "mealstogo-4a3d5.appspot.com",
-    messagingSenderId: "577460851070",
-    appId: "1:577460851070:web:b4a61aa335a9c0c980232f"
-  };
-
-  ////  firebase.initializeApp(firebaseConfi;);
 
   return (
     <>
