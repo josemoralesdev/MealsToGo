@@ -8,10 +8,7 @@ import {
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 // Context
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
 import { Navigation } from "./src/infrastructure/navigation";
-import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 import { AuthenticationProvider } from "./src/services/authentication/authentication.context";
 import * as firebase from "firebase";
 
@@ -44,13 +41,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationProvider>
-          <FavouritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavouritesContextProvider>
+          <Navigation />
         </AuthenticationProvider>
       </ThemeProvider>
     </>
