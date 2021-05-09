@@ -1,44 +1,53 @@
 import React, { useContext, useState } from "react";
-import { TextInput } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { colors } from "../../../infrastructure/theme/colors";
+import { Text } from "../../../components/typography/text.component";
 import {
   AccountCover,
   AccountBackground,
   AccountContainer,
+  AuthInput,
   AuthButton,
+  ErrorContainer,
+  Title,
 } from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { onLogin } = useContext(AuthenticationContext);
+  const { onLogin, error } = useContext(AuthenticationContext);
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals2Go</Title>
       <AccountContainer>
-        <TextInput
-          mode="outlined"
+        <AuthInput
+          autoCapitalize="none"
+          keyboardType="email-address"
           label="Email"
+          mode="outlined"
           placeholder="Type in your email"
-          style={{ width: 300 }}
-          theme={{ colors: { primary: colors.brand.primary } }}
+          textContentType="emailAddress"
           value={email}
           onChangeText={(e) => setEmail(e)}
         />
         <Spacer size="large">
-          <TextInput
+          <AuthInput
+            autoCapitalize="none"
             mode="outlined"
             label="Password"
-            secureTextEntry={true}
-            theme={{ colors: { primary: colors.brand.primary } }}
+            textContentType="password"
+            secureTextEntry
             placeholder="Type in your password"
-            style={{ width: 300 }}
             value={password}
             onChangeText={(p) => setPassword(p)}
           />
         </Spacer>
+        {error && (
+          <ErrorContainer>
+            <Text variant="error">{error}</Text>
+          </ErrorContainer>
+        )}
         <Spacer size="large">
           <AuthButton
             icon="lock-open-outline"
@@ -49,6 +58,11 @@ export const LoginScreen = ({ navigation }) => {
           </AuthButton>
         </Spacer>
       </AccountContainer>
+      <Spacer size="large">
+        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+          Go back
+        </AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };
