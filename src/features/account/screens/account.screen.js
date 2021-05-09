@@ -5,7 +5,6 @@ import {
   AccountBackground,
   AccountContainer,
   AuthButton,
-  AuthInput,
   Title,
 } from "../components/account.styles";
 
