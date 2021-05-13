@@ -12,6 +12,7 @@ import {
   Title,
 } from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ export const LoginScreen = ({ navigation }) => {
             <AuthButton
               icon="lock-open-outline"
               mode="contained"
+              color={colors.brand.primary}
               onPress={() => onLogin(email, password)}
             >
               Login
@@ -64,7 +66,11 @@ export const LoginScreen = ({ navigation }) => {
         </Spacer>
       </AccountContainer>
       <Spacer size="large">
-        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+        <AuthButton
+          color={colors.brand.muted}
+          mode="contained"
+          onPress={() => navigation.goBack()}
+        >
           Go back
         </AuthButton>
       </Spacer>

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { colors } from "../../../infrastructure/theme/colors";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
@@ -68,6 +69,7 @@ export const RegisterScreen = ({ navigation }) => {
             <AuthButton
               icon="email"
               mode="contained"
+              color={colors.brand.primary}
               onPress={() => onRegister(email, password, repeatedPassword)}
             >
               Register
@@ -78,7 +80,11 @@ export const RegisterScreen = ({ navigation }) => {
         </Spacer>
       </AccountContainer>
       <Spacer size="large">
-        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+        <AuthButton
+          mode="contained"
+          color={colors.brand.muted}
+          onPress={() => navigation.goBack()}
+        >
           Go back
         </AuthButton>
       </Spacer>
