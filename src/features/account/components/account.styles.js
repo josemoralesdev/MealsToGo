@@ -24,10 +24,9 @@ export const AccountContainer = styled.View`
   margin-top: ${(props) => props.theme.space[2]};
 `;
 
-export const AuthButton = styled(Button).attrs({
-  color: colors.brand.primary,
-})`
+export const AuthButton = styled(Button)`
   padding: ${(props) => props.theme.space[2]};
+  width: 300px;
 `;
 export const ErrorContainer = styled.View`
   max-width: 300px;
@@ -47,5 +46,11 @@ export const AuthInput = styled(TextInput).attrs({
 `;
 
 export const Title = styled.Text`
-  font-size: ${(props) => props.theme.fontSizes.title};
+  font-size: 30px;
+`;
+export const AnimationContainer = styled.View`
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 7.5%;
 `;
