@@ -29,7 +29,7 @@ export const RestaurantsContextProvider = ({ children }) => {
           setError(err);
           setIsLoading(false);
         });
-    }, 1000);
+    }, 500);
   };
 
   useEffect(() => {
