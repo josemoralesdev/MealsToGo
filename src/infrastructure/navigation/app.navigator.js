@@ -1,4 +1,5 @@
 import React from "react";
+import { colors } from "../theme/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RestaurantsNavigator } from "./restaurant.navigator";
@@ -32,7 +33,7 @@ const Tabs = () => (
         <Tab.Navigator
           screenOptions={createScreenOptions}
           tabBarOptions={{
-            activeTintColor: "dodgerblue",
+            activeTintColor: colors.brand.primary,
             inactiveTintColor: "gray",
           }}
         >
